@@ -10,6 +10,6 @@
 
 ##  Планы по доработке проекта
 
-Оптимизировать код, дополнить адаптив, поэксперементировать. 
+Оптимизировать код, дополнить адаптив, поэксперементировать со стилями. 
 
 [My project Github: Zakrivayuschiy-teg-f](https://github.com/Kirill-Kazantcev/zakrivayuschiy-teg-f.git "I Kinza, Kazantcev Kirill")
