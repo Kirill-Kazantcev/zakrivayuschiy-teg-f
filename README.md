@@ -13,3 +13,6 @@
 Оптимизировать код, дополнить адаптив, поэксперементировать со стилями. 
 
 [My project Github: Zakrivayuschiy-teg-f](https://github.com/Kirill-Kazantcev/zakrivayuschiy-teg-f.git "I Kinza, Kazantcev Kirill")
+
+## Проект сверстанный по макету
+[Default project: Zakrivayuschiy-teg-f](https://kirill-kazantcev.github.io/zakrivayuschiy-teg-f/)
