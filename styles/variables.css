@@ -1,1 +1,64 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
+:root {
+  /* Основной шрифт */
+  --page-font-family: "Inter-Variable", "Arial", sans-serif;
+  --page-font-weight: 400;
+  --page-font-size: 18px;
+  --page-line-height: 21px;
+  --card__title-line-height: 22px;
+
+  /* Шрифт для титутлов*/
+  --title-font-family: "PressStart2P", monospace;
+  --title-font-weight: 700;
+  --title-font-size: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
+  --subtitle-font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
+  /* Шрифт для кнопок и watermark */
+  --accent-font-size: 14px;
+  --accent-line-height: 100%;
+  --button-line-height: 90%;
+  /* Цвета страницы */
+  --page-color: rgba(0, 0, 0, 1);
+  --page-background-color: rgba(231, 231, 231, 1);
+  /* Цвета блоков */
+  --block-background-color: rgba(255, 255, 255, 1);
+  --backdrop-background-color: rgba(0 0 0 / 0.75);
+
+  /* Цвета обводки*/
+  --accent-color: rgba(0, 0, 0, 1);
+  --stroke-color: rgba(255 255 255 / 0.5);
+  --animation-fill-color: rgba(255, 0, 0, 1);
+
+  /* Отступы header-padding */
+  --header_padding-top: clamp(
+    7.625rem,
+    7.0481rem + 2.4615vw,
+    8.125rem
+  ); /* 120 -> 130 */
+  --header_padding-bottom: clamp(
+    7.375rem,
+    6.7981rem + 2.4615vw,
+    7.875rem
+  ); /* 118 -> 126 */
+  --header_padding-inline: clamp(
+    1rem,
+    -6.6803rem + 32.7692vw,
+    7.65625rem
+  ); /* 16 -> 122,5 */
+  /* Отступы header-marging */
+  --header_margin-block: 100px;
+  /* Размер watermark-inset */
+  --watermark-inset-block: 23px;
+  --watermark-inset-inline: clamp(0.6875rem, 0.4234rem + 1.1268vw, 1.4375rem);
+  /* Дискета floppy */
+  --floppy-icon-size: clamp(1.75rem, 1.904rem + -0.6573vw, 1.3125rem);
+
+  /* Делаем сетку для фона страницы*/
+  --page-background-gradient: repeating-linear-gradient(
+      to right,
+      #d3d3d3 0px 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(to bottom, #d3d3d3 0px 2px, transparent 2px 4px),
+    linear-gradient(to bottom, #e7e7e7, #e7e7e7 0.01%, #1a1a1a 100%);
+}

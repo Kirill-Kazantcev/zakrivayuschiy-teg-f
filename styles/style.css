@@ -10,7 +10,344 @@
 
 */
 
+/* Общие классы */
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--page-font-family, "Inter-Variable"), "Arial", sans-serif;
+  font-variation-settings: "wght" var(--page-font-weight, 400);
+  font-size: var(--page-font-size, 18px);
+  line-height: var(--page-line-height, 21px);
+  color: var(--page-color, rgba(0, 0, 0, 1));
+  background-color: var(--page-background-color, rgba(231, 231, 231, 1));
+  background-image: var(
+    --page-background-gradient,
+    repeating-linear-gradient(to right, #d3d3d3 0px 2px, transparent 2px 4px),
+    repeating-linear-gradient(to bottom, #d3d3d3 0px 2px, transparent 2px 4px),
+    linear-gradient(to bottom, #e7e7e7, #e7e7e7 0.01%, #1a1a1a 100%)
+  );
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Для титулов */
+.title {
+  font-family: var(--title-font-family, "PressStart2P"), monospace;
+  font-variation-settings: "wght" var(--page-font-weight, 400);
+  line-height: var(--accent-line-height, 100%);
+  text-transform: uppercase;
+}
+
+/* Декор страницы */
+.decor {
+  background-color: var(--block-background-color, rgba(255, 255, 255, 1));
+  border: 2px solid var(--accent-color, rgba(0, 0, 0, 1));
+}
+
+/* Размеры страницы */
+.size {
+  inline-size: min(100vi, 700px);
+  margin-inline: auto;
+}
+.article {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Стилизация кнопки Like */
+.button {
+  font-family: var(--title-font-family, "PressStart2P"), monospace;
+  color: var(--block-background-color, rgba(255, 255, 255, 1));
+  position: relative;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--accent-color, rgba(0, 0, 0, 1));
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: left;
+}
+.button:hover::before {
+  transform: scaleX(1);
+}
+.button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--accent-color, rgba(0, 0, 0, 1));
+}
+
+/* Фильтры */
+.contrast {
+  filter: contrast(80%);
+}
+.sepia-grayscale {
+  filter: sepia(50%) grayscale(50%);
+}
+.saturate {
+  filter: saturate(400%);
+}
+.hue-rotate {
+  filter: hue-rotate(-2500deg) saturate(100%);
+}
+.invert-saturate-contrast {
+  filter: invert(60%) saturate(150%) contrast(200%);
+}
+.sepia {
+  filter: sepia(80%);
+}
+.blur {
+  filter: blur(0.6875rem);
+}
+.brightness-invert-hue-rotate {
+  filter: brightness(75%) invert(25%) hue-rotate(-250deg);
+}
+
+/* Шапка */
+.header {
+  padding-block-start: var(
+    --header-padding-top,
+    clamp(7.625rem, 7.0481rem + 2.4615vw, 8.125rem)
+  );
+  padding-block-end: var(
+    --header-padding-bottom,
+    clamp(7.375rem, 6.7981rem + 2.4615vw, 7.875rem)
+  );
+  padding-inline: var(
+    --header_padding-inline,
+    clamp(1rem, -6.6803rem + 32.7692vw, 7.65625rem)
+  );
+  margin-block: var(--header_margin-block, 100px);
+}
+.header__title {
+  font-size: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
+}
+.header__subtitle {
+  font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
+}
+
+/* Карточка */
+.card {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-variation-settings: inherit;
+}
+.card-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+.card__title {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: var(--card__title-line-height, 22px);
+  font-variation-settings: "wght" var(--title-font-weight, 700);
+  padding-block: 5px;
+  padding-inline: 10px;
+}
+.card__container {
+  position: relative;
+  inset: 0;
+}
+.card__image {
+  object-position: right;
+  object-fit: cover;
+  display: block;
+  inline-size: 100%;
+  aspect-ratio: 1/1;
+  outline: 2px solid var(--accent-color, rgba(0, 0, 0, 1));
+}
+.card__image-watermark {
+  font-family: var(--title-font-family, "PressStart2P"), monospace;
+  font-size: var(--accent-font-size, 14px);
+  line-height: var(--accent-line-height, 100%);
+  position: absolute;
+  inset-block-start: var(--watermark-inset-block, 23px);
+  inset-inline-end: var(
+    --watermark-inset-inline,
+    clamp(0.6875rem, 0.4234rem + 1.1268vw, 1.4375rem)
+  );
+  text-shadow: -1px 0 var(--stroke-color, rgb(255 255 255 / 0.5)),
+    0 1px var(--stroke-color, rgb(255 255 255 / 0.5)),
+    1px 0 var(--stroke-color, rgb(255 255 255 / 0.5)),
+    0 -1px var(--stroke-color, rgb(255 255 255 / 0.5));
+}
+/* text-stroke */
+@supports ((-webkit-text-stroke: 1px #000) or (text-stroke: 1px #000)) {
+  .card__image-watermark {
+    -webkit-text-stroke: 1px var(--stroke-color, rgb(255 255 255 / 0.5));
+    text-stroke: 1px var(--stroke-color, rgb(255 255 255 / 0.5));
+    text-shadow: 1px 1px var(--stroke-color, rgb(255 255 255 / 0.5));
+  }
+}
+.card__content {
+  padding: 25px;
+  padding-top: 27px;
+}
+.card__content p:not(:first-of-type) {
+  margin-block-start: 27px;
+}
+.card__paragraph {
+  font-variation-settings: "wght" var(--page-font-weight, 400);
+}
+.card__paragraph-end {
+  text-align: center;
+}
+.card__buttons {
+  display: flex;
+  justify-content: end;
+  column-gap: 4px;
+  margin-block-start: 25px;
+}
+
+/* ✦ card__like-button — для кнопки Like рядом с иконкой */
+.card__like-button {
+  inline-size: 130px;
+  block-size: 38px;
+  justify-content: center;
+  align-items: center;
+}
+.button__text {
+  font-size: var(--accent-font-size, 14px);
+  line-height: var(--button-line-height, 90%);
+  position: relative;
+  mix-blend-mode: difference;
+  z-index: 1;
+}
+
+/* ✦ card__icon-button — для кнопки, оборачивающей иконку */
+.card__icon-button {
+  background-color: transparent;
+  border: 2px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  block-size: 38px;
+  margin: 0;
+  margin-top: 1px;
+  padding: 0;
+  cursor: pointer;
+}
+.card__icon-button:focus-visible {
+  border-color: var(--accent-color, rgba(0, 0, 0, 1));
+  transition: border-color 0.3s ease;
+}
+.card__icon-button:focus {
+  outline: none;
+}
+
+/* Сохранить на память  */
+.save-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto 100px;
+  column-gap: 8px;
+  inline-size: 339px;
+  block-size: 55px;
+  padding: 16px 1px 15px 0;
+}
+
+.floppy-icon {
+  position: relative;
+  display: block;
+  block-size: var(
+    --floppy-icon-size,
+    clamp(1.75rem, 1.904rem + -0.6573vw, 1.3125rem)
+  );
+  inline-size: var(
+    --floppy-icon-size,
+    clamp(1.75rem, 1.904rem + -0.6573vw, 1.3125rem)
+  );
+  margin-block-end: 1px;
+  mix-blend-mode: difference;
+  z-index: 1;
+}
+
+/* Модальне окно */
+#modal {
+  color: var(--accent-color, rgba(0, 0, 0, 1));
+  background-color: var(--block-background-color, rgba(255, 255, 255, 1));
+  border: 2px solid var(--accent-color, rgba(0, 0, 0, 1));
+  padding: 30px;
+}
+
+#modal[open] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+#modal::backdrop {
+  background-color: var(--backdrop-background-color, rgba(0 0 0 / 0.75));
+}
+
+.modal-form {
+  inline-size: 293px;
+}
+
+.modal-button {
+  block-size: 38px;
+  inline-size: 100%;
+}
+.modal-button:focus {
+  box-shadow: none;
+}
+.modal-button:focus-visible {
+  box-shadow: 2px 2px 0 var(--accent-color, rgba(0, 0, 0, 1));
+}
+
+.modal-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  inline-size: 100%;
+  gap: 20px;
+}
+.modal_floppy-icon {
+  block-size: 39px;
+  inline-size: 39px;
+  mix-blend-mode: normal;
+}
+.modal-text {
+  font-family: var(--accent-font-family, "PressStart2P"), monospace;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 150%;
+}
+
+/* Медиа запросы  */
+@media (width >= 320px) and (width <375px) {
+  /* Прверка на 320px */
+  .header__title {
+    font-size: min(calc(100vi / 10), 49px);
+  }
+  .header__subtitle {
+    font-size: min(calc(100vi / 10), 14px);
+  }
+}
+
+@media (width <= 375px) {
+  .save-button {
+    flex-direction: column;
+    max-inline-size: min(calc(100vi * 0.9), 306px);
+    min-block-size: min(calc(100vi * 0.9), 84px);
+    gap: 8px;
+  }
+  #modal {
+    inline-size: 100%;
+    padding-inline: 40px;
+  }
+  .modal-form {
+    inline-size: 100%;
+  }
 }
