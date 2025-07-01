@@ -7,6 +7,9 @@
     <link rel="icon" href="./images/favicon.ico" type="image/ico" sizes="any" />
     <link rel="icon" href="./images/favicon.png" type="image/png" sizes="any" />
     <link rel="icon" href="./svg/favicon.svg" type="image/svg" sizes="any" />
+    <link rel="apple-touch-icon" href="./images/favicon256х256.png" type="image/png" sizes="256x256" />
+    <link rel="apple-touch-icon" href="./images/favicon192х192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="./images/favicon.png" type="image/png" sizes="180x180" />
     <link rel="stylesheet" href="./fonts/fonts.css" />
     <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/globals.css" />
@@ -16,10 +19,10 @@
   <body class="page">
     <!--  -->
     <header class="header size decor">
-      <article class="article article__gap">
+      <section class="header__section ">
         <a class="header__title title">&lt;/html&gt;</a>
         <h1 class="header__subtitle title">закрывающий тег</h1>
-      </article>
+      </section>
     </header>
     <!--  -->
     <main>
@@ -50,7 +53,7 @@
                 Место для ваших воспоминаний о начале обучения.
               </p>
               <div class="card__buttons" aria-hidden="true">
-                <button class="card__icon-button" type="button">
+                <button class="card__icon-button" type="button" aria-label="Кнопка Like / Unlike">
                   <svg
                     class="like-icon"
                     width="39"
@@ -105,6 +108,7 @@
                 class="card__image sepia-grayscale"
                 src="./images/wagon.png"
                 alt="Фургон"
+                loading="lazy"
               />
               <span class="card__image-watermark">&lt;/HTML&gt;</span>
             </div>
@@ -122,7 +126,7 @@
                 Место для ваших воспоминаний о начале первого спринта.
               </p>
               <div class="card__buttons" aria-hidden="true">
-                <button class="card__icon-button" type="button">
+                <button class="card__icon-button" type="button" aria-label="Кнопка Like / Unlike">
                   <svg
                     class="like-icon"
                     width="39"
@@ -177,6 +181,7 @@
                 class="card__image saturate"
                 src="./images/wagon.png"
                 alt="Фургон"
+                loading="lazy"
               />
               <span class="card__image-watermark">&lt;CSS&gt;</span>
             </div>
@@ -191,7 +196,7 @@
                 Место для ваших воспоминаний об окончании первого спринта.
               </p>
               <div class="card__buttons" aria-hidden="true">
-                <button class="card__icon-button" type="button">
+                <button class="card__icon-button" type="button" aria-label="Кнопка Like / Unlike">
                   <svg
                     class="like-icon"
                     width="39"
@@ -246,6 +251,7 @@
                 class="card__image hue-rotate"
                 src="./images/wagon.png"
                 alt="Фургон"
+                loading="lazy"
               />
               <span class="card__image-watermark">&lt;desigions&gt;</span>
             </div>
@@ -262,7 +268,7 @@
                 Место для ваших воспоминаний о начале второго спринта.
               </p>
               <div class="card__buttons" aria-hidden="true">
-                <button class="card__icon-button" type="button">
+                <button class="card__icon-button" type="button" aria-label="Кнопка Like / Unlike">
                   <svg
                     class="like-icon"
                     width="39"
@@ -317,6 +323,7 @@
                 class="card__image invert-saturate-contrast"
                 src="./images/wagon.png"
                 alt="Фургон"
+                loading="lazy"
               />
               <span class="card__image-watermark">care</span>
             </div>
@@ -334,7 +341,7 @@
                 Место для ваших воспоминаний об окончании второго спринта.
               </p>
               <div class="card__buttons" aria-hidden="true">
-                <button class="card__icon-button" type="button">
+                <button class="card__icon-button" type="button" aria-label="Кнопка Like / Unlike">
                   <svg
                     class="like-icon"
                     width="39"
@@ -389,6 +396,7 @@
                 class="card__image sepia"
                 src="./images/wagon.png"
                 alt="Фургон"
+                loading="lazy"
               />
               <span class="card__image-watermark">&lt;support&gt;</span>
             </div>
@@ -403,7 +411,7 @@
                 Место для ваших воспоминаний о начале третьего спринта.
               </p>
               <div class="card__buttons" aria-hidden="true">
-                <button class="card__icon-button" type="button">
+                <button class="card__icon-button" type="button" aria-label="Кнопка Like / Unlike">
                   <svg
                     class="like-icon"
                     width="39"
@@ -458,6 +466,7 @@
                 class="card__image blur"
                 src="./images/wagon.png"
                 alt="Фургон"
+                loading="lazy"
               />
               <span class="card__image-watermark"
                 >&lt;lifes-style: none;&gt;</span
@@ -466,7 +475,7 @@
             <div class="card__content">
               <p class="card_paragraph">
                 Во время учёбы часто возникает чувство, когда не знаешь, за что
-                хвататься. Вроде и проектную <br />пора сдавать, и задачи
+                хвататься. Вроде и проектную пора сдавать, и задачи
                 хочется порешать, и в теории получше разобраться, и жизнь не
                 забыть пожить. В такие моменты очень нужна концентрация.
                 Вспомните, откуда вы её черпали.
@@ -476,7 +485,7 @@
                 Место для ваших воспоминаний об окончании третьего спринта.
               </p>
               <div class="card__buttons" aria-hidden="true">
-                <button class="card__icon-button" type="button">
+                <button class="card__icon-button" type="button" aria-label="Кнопка Like / Unlike">
                   <svg
                     class="like-icon"
                     width="39"
@@ -531,6 +540,7 @@
                 class="card__image brightness-invert-hue-rotate"
                 src="./images/wagon.png"
                 alt="Фургон"
+                loading="lazy"
               />
               <span class="card__image-watermark">&lt;expetience&gt;</span>
             </div>
@@ -549,7 +559,7 @@
                 чувствуете в этой точке пути.
               </p>
               <div class="card__buttons" aria-hidden="true">
-                <button class="card__icon-button" type="button">
+                <button class="card__icon-button" type="button" aria-label="Кнопка Like / Unlike">
                   <svg
                     class="like-icon"
                     width="39"
@@ -629,11 +639,11 @@
         >
           <use href="./svg/floppy.svg#floppy"></use>
         </svg>
-        <p class="modal-text">вставьте<br />дискету, чтобы<br />продолжить</p>
+        <p class="modal-text">вставьте дискету, чтобы продолжить</p>
       </div>
       <form class="modal-form" method="dialog">
         <button class="button modal-button decor" type="submit">
-          <span class="button__text">OK</span>
+          <span class="button__text button__text-transform">ок</span>
         </button>
       </form>
     </dialog>
