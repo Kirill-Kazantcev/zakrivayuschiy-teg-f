@@ -239,7 +239,6 @@
   margin-top: 1px;
   padding: 0;
   cursor: pointer;
-  transition: border 0.3s ease;
 }
 .card__icon-button:focus-visible {
   border-color: var(--accent-color, rgba(0, 0, 0, 1));
