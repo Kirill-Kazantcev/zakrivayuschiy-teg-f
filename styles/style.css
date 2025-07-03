@@ -48,7 +48,7 @@
 
 /* Размеры страницы */
 .size {
-  inline-size: min(100vi, 700px);
+  inline-size: var(--header-size, clamp(320px, 100vw, 700px));
   margin-inline: auto;
 }
 
@@ -107,6 +107,12 @@
 
 /* Шапка */
 .header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  gap: 20px;
   padding-block-start: var(
     --header-padding-top,
     clamp(7.625rem, 7.0481rem + 2.4615vw, 8.125rem)
@@ -121,17 +127,11 @@
   );
   margin-block: var(--header_margin-block, 100px);
 }
-.header__container {
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
 .header__title {
-  font-size: min(clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem), calc(100vi / 10));
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
 }
 .header__subtitle {
-  font-size: min(clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem), calc(100vi / 10));
+  font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
 }
 
 /* Карточка */
@@ -142,9 +142,7 @@
   font-variation-settings: inherit;
 }
 .card-list {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  display: grid;
   gap: 50px;
 }
 .card__title {
@@ -254,14 +252,8 @@
   align-items: center;
   margin: 50px auto 100px;
   gap: 8px;
-  inline-size: var(
-    --save-inline-size,
-    clamp(19.125rem, 18.4868rem + 2.723vw, 20.9375rem)
-  );
-  block-size: var(
-    --save-block-size,
-    clamp(3.4375rem, 5.8882rem + -2.723vw, 5.25rem)
-  );
+  inline-size: 335px;
+  block-size: 55px;
   padding: 16px 1px 15px 0;
 }
 

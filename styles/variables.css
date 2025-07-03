@@ -28,6 +28,8 @@
   --accent-color: rgba(0, 0, 0, 1);
   --stroke-color: rgba(255 255 255 / 1);
   --animation-fill-color: rgba(255, 0, 0, 1);
+  /* size */
+  --header-size: clamp(320px, 100%, 700px);
 
   /* Отступы header-padding */
   --header_padding-top: clamp(
@@ -42,7 +44,7 @@
   ); /* 118 -> 126 */
   --header_padding-inline: clamp(
     1rem,
-    -6.6803rem + 32.7692vw,
+    -1.3438rem + 10vw,
     7.65625rem
   ); /* 16 -> 122,5 */
   /* Отступы header-marging */
@@ -50,9 +52,6 @@
   /* Размер watermark-inset */
   --watermark-inset-block: 23px;
   --watermark-inset-inline: clamp(0.6875rem, 0.4234rem + 1.1268vw, 1.4375rem);
-  /* save-button */
-  --save-inline-size: clamp(19.125rem, 18.4868rem + 2.723vw, 20.9375rem);
-  --save-block-size: clamp(3.4375rem, 5.8882rem + -2.723vw, 5.25rem) ;
   /* Дискета floppy */
   --floppy-icon-size: clamp(1.3125rem, 1.904rem + -0.6573vw, 1.75rem);
 
