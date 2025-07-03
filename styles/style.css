@@ -51,12 +51,6 @@
   inline-size: min(100vi, 700px);
   margin-inline: auto;
 }
-.header__section {
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
 
 /* Стилизация кнопки Like */
 .button {
@@ -127,11 +121,17 @@
   );
   margin-block: var(--header_margin-block, 100px);
 }
+.header__container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
 .header__title {
-  font-size: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
+  font-size: min(clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem), calc(100vi / 10));
 }
 .header__subtitle {
-  font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
+  font-size: min(clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem), calc(100vi / 10));
 }
 
 /* Карточка */
@@ -253,9 +253,15 @@
   justify-content: center;
   align-items: center;
   margin: 50px auto 100px;
-  column-gap: 8px;
-  inline-size: 339px;
-  block-size: 55px;
+  gap: 8px;
+  inline-size: var(
+    --save-inline-size,
+    clamp(19.125rem, 18.4868rem + 2.723vw, 20.9375rem)
+  );
+  block-size: var(
+    --save-block-size,
+    clamp(3.4375rem, 5.8882rem + -2.723vw, 5.25rem)
+  );
   padding: 16px 1px 15px 0;
 }
 
@@ -264,11 +270,11 @@
   display: block;
   block-size: var(
     --floppy-icon-size,
-    clamp(1.75rem, 1.904rem + -0.6573vw, 1.3125rem)
+    clamp(1.3125rem, 1.904rem + -0.6573vw, 1.75rem)
   );
   inline-size: var(
     --floppy-icon-size,
-    clamp(1.75rem, 1.904rem + -0.6573vw, 1.3125rem)
+    clamp(1.3125rem, 1.904rem + -0.6573vw, 1.75rem)
   );
   margin-block-end: 1px;
   mix-blend-mode: difference;
@@ -324,25 +330,11 @@
 }
 
 /* Медиа запросы  */
-@media (width >= 320px) and (width <375px) {
-  /* Прверка на 320px */
-  .header__title {
-    font-size: min(calc(100vi / 10), 49px);
-  }
-  .header__subtitle {
-    font-size: min(calc(100vi / 10), 14px);
-  }
-}
-
 @media (width <= 375px) {
-  .card_paragraph-size {
-    max-inline-size: 317px;
-  }
   .save-button {
     flex-direction: column;
     max-inline-size: min(calc(100vi * 0.9), 306px);
     min-block-size: min(calc(100vi * 0.9), 84px);
-    gap: 8px;
   }
   #modal {
     inline-size: 100%;
